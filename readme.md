@@ -58,7 +58,7 @@ The map looks the following way:
 ```
 plot(temperature_world,
      col=colorRampPalette(c("#4B45F2", "#DDA0DD", "#FB3918"))(50),
-     main="World temperatures, °??")
+     main="World temperatures, °С")
 ```
 ![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/world_temperatures_raster.png)  
 
@@ -74,13 +74,13 @@ plot(temperature_europe,
      col=colorRampPalette(c("#4B45F2", "#DDA0DD", "#FB3918"))(50),
      main="Temperature in Europe, °С")
 ```
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)   
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/europe_temperatures_raster.png)   
 
 Similarly, I load, stack, average and crop maps for humidity and wind speed. Let me skip that step and present the map now.  
 
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)   
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/europe_humidity_raster.png)   
 
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)  
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/europe_windspeed_raster.png)  
 
 The research introduces to methods to average the climatic conditions data. The first method averages values directly. The second method takes into account the population density distribution in the country. The motivation for this decision is presented in the research paper. The second method requires to run the following two code blocks. If you are intrested only in the first method, you can skip these two blocks.
 
@@ -95,7 +95,7 @@ plot(density_europe,
      col=colorRampPalette(c("white", "red"))(255),
      main="Population density in Europe")
 ```
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)    
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/europe_density_raster.png)    
 
 Climatic conditions map is updated according to the formula, presented in the research. Coefficient alpha is set to 0.3.
 ```
@@ -117,9 +117,9 @@ ggplot(europe) +
   scale_fill_gradient(low='#18ADFF', high='#FF9418') +
   ggtitle("Temperature in Europe countries in first four months of the year,\n averaged with respect to population density")
 ```
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)    
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)    
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)    
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/density_scaled_temperature.png)    
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/density_scaled_water_vapor_pressure.png)    
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/density_scaled_wind_speed.png)    
 
 # COVID-19 spread speed computation
 The script requires the following libraries:
@@ -197,7 +197,7 @@ ggplot(europe) +
   scale_fill_gradient(low='#FFCBBB', high='#FF2400') +
   ggtitle("COVID-19 spread speed")
 ```
-![Image alt](https://github.com/Maxxxxxon/superresolution/blob/master/images/building.png)    
+![Image alt](https://github.com/ucfnagr/covid-climate-dependences/blob/main/images/covid_speed.png)    
 
 # Regression and hypothesis testing
 Required libraries:
